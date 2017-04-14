@@ -38,7 +38,7 @@ $ cd /home/usr/src/buildroot
 $ make savedefconfig
 ```
 
-The changes will be reflected in the `configs/recorder_$(TARGET)_defconfig` file.
+The changes will be reflected in the `configs/octoprint_$(TARGET)_defconfig` file.
 
 ### Saving kernel configuration changes
 
@@ -48,5 +48,5 @@ To save any kernel configuration changes made with `make linux-menuconfig`, exec
 $ cd /home/usr/src/buildroot
 $ make linux-savedefconfig
 $ cp output/build/linux-xxx/defconfig \
-    /home/user/src/recorder-buildroot/board/raspi/recorder/linux-xxx_defconfig
+    /home/user/src/octoprint-buildroot/board/raspi/octoprint/linux-xxx_defconfig
 ```

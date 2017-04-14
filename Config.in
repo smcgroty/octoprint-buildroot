@@ -1,1 +1,1 @@
-source "$BR2_EXTERNAL_RECORDER_PATH/package/Config.in"
+source "$BR2_EXTERNAL_OCTOPRINT_PATH/package/Config.in"

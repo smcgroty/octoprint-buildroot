@@ -36,4 +36,4 @@ BR2_ROOTFS_POST_BUILD_SCRIPT="board/raspberrypi3/post-build.sh"
 BR2_ROOTFS_POST_IMAGE_SCRIPT="board/raspberrypi3/post-image.sh"
 BR2_ROOTFS_POST_SCRIPT_ARGS="--add-pi3-miniuart-bt-overlay"
 
-BR2_ROOTFS_OVERLAY="$(BR2_EXTERNAL_RECORDER_PATH)/board/raspi/recorder/rootfs-overlay"
+BR2_ROOTFS_OVERLAY="$(BR2_EXTERNAL_OCTOPRINT_PATH)/board/raspi/octoprint/rootfs-overlay"
