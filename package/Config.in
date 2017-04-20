@@ -3,3 +3,6 @@ menu "Firmware"
 	source "$BR2_EXTERNAL_OCTOPRINT_PATH/package/rpi-wifi-firmware/Config.in"
 endmenu
 endmenu
+menu "OctoPrint"
+	source "$BR2_EXTERNAL_OCTOPRINT_PATH/package/python-octoprint/Config.in"
+endmenu
