@@ -1,52 +1,27 @@
 ### Initialization
 
+1. Download and unpack buildroot
+2. Download and unpack octoprint-buildroot
+3. `cd` into the buildroot directory and run
 ```
-$ make init TARGET=rpi3 BUILDROOT=/home/user/src/buildroot
+$ make BR2_EXTERNAL=/path/to/octoprint-buildroot `TARGET`
 ```
+`TARGET` can be any build option supported by Buildroot. Examples for Raspberry Pi are below
 
-Possible values for `TARGET`:
-
-- `rpi0`: Raspberry Pi Zero
-- `rpi3`: Raspberry Pi 3
+- `raspberrypi3_defconfig` : Raspberry Pi 3/3B/CM3
+- `raspberrypi0w_defconfig`: Raspberry Pi Zero W
 
 ### Buildroot configuration
 
-To change the buildroot configuration, execute:
+TODO: include this configuration automatically
 
-```
-$ cd /home/usr/src/buildroot
-$ make menuconfig
-$ make
-```
+1: `cd` into the buildroot directory
+2. Run `make menuconfig`
+3. Select the following options:
+    Toolchain --> Enable WCHAR support
+    Target packages --> Interpreter languages and scripting --> Python
+    External options --> OctoPrint --> octoprint
+4. Save and exit
+5. Run `make`
 
-To change the kernel configuration, execute:
-
-```
-$ cd /home/usr/src/buildroot
-$ make linux-menuconfig
-$ make
-```
-
-The last commands copies changes made to the kernel configuration to the minikube-iso defconfig.
-
-### Saving buildroot configuration changes
-
-To save any buildroot configuration changes made with `make menuconfig`, execute:
-
-```
-$ cd /home/usr/src/buildroot
-$ make savedefconfig
-```
-
-The changes will be reflected in the `configs/octoprint_$(TARGET)_defconfig` file.
-
-### Saving kernel configuration changes
-
-To save any kernel configuration changes made with `make linux-menuconfig`, execute:
-
-```
-$ cd /home/usr/src/buildroot
-$ make linux-savedefconfig
-$ cp output/build/linux-xxx/defconfig \
-    /home/user/src/octoprint-buildroot/board/raspi/octoprint/linux-xxx_defconfig
-```
+Once the build is finished, write the sdcard.img file in output/images to an SD card using `dd` or other option of your choice.
