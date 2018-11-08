@@ -15,7 +15,7 @@ $ make BR2_EXTERNAL=/path/to/octoprint-buildroot `TARGET`
 
 TODO: include this configuration automatically
 
-1: `cd` into the buildroot directory
+1. `cd` into the buildroot directory
 2. Run `make menuconfig`
 3. Select the following options:
     Toolchain --> Enable WCHAR support
